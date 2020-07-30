@@ -16,6 +16,7 @@
   --secondary-white-color: #f5f4fa;
   --fotter-bcg-color: #2f303a;
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 0.1);
 }
 
 html {
@@ -133,6 +134,7 @@ body {
   padding-bottom: 32px;
   transition: var(--accent-color) 300ms;
   color: var(--title-text-color);
+  transition: 250ms var(--timing-function);
 }
 .nav-list-link:hover,
 .nav-list-link:focus {
@@ -155,7 +157,7 @@ address {
   text-decoration: none;
   color: var(--primary-text-color);
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms var(--timing-function);
 }
 .address-list:not(:last-child) {
   margin-right: 30px;
@@ -165,6 +167,10 @@ address {
 .address-list:focus {
   color: var(--accent-color);
 }
+.address-list .address-list-svg {
+  transition: 250ms var(--timing-function);
+}
+
 .address-list-svg {
   margin-right: 10px;
   fill: var(--primary-text-color);
@@ -363,7 +369,7 @@ address {
   background-repeat: no-repeat;
   background-position: center;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms var(--timing-function);
 }
 .team-link:hover {
   background-color: var(--accent-color);
@@ -371,7 +377,9 @@ address {
 .team-link:focus {
   background-color: var(--accent-color);
 }
-
+.team-link .team-link-icon {
+  transition: 250ms var(--timing-function);
+}
 .team-link-icon {
   fill: currentColor;
 }
@@ -405,7 +413,13 @@ address {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+  transition: color 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
 }
+.client-logo .client-logo-svg {
+  transition: fill 250ms var(--timing-function);
+}
+
 .client-logo:hover {
   border-color: var(--accent-color);
 }
@@ -464,6 +478,8 @@ address {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
+
+  transition: color 250ms var(--timing-function);
 }
 
 .address-info {
@@ -472,6 +488,8 @@ address {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
+
+  transition: color 250ms var(--timing-function);
 }
 
 .address-info:not(:last-child) {
@@ -517,8 +535,8 @@ address {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 0.1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 0.1);
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
   overflow: hidden;
 }
 .btn-footer:hover {
@@ -538,7 +556,7 @@ address {
   height: 20px;
   margin-left: 10px;
   background-size: contain;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 0.1);
+  transition: transform 250ms var(--timing-function);
 }
 
 .btn-footer::after {
@@ -578,6 +596,8 @@ address {
 
   background-repeat: no-repeat;
   background-position: center;
+
+  transition: background-color 250ms var(--timing-function);
 }
 .logo-social:hover,
 .logo-social:focus {
@@ -609,8 +629,8 @@ address {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
 }
 .button:hover,
 button:focus {
@@ -650,6 +670,7 @@ button:focus {
 
   background-color: #f5f4fa;
   color: var(--title-text-color);
+  transition: background-color 250ms var(--timing-function);
 }
 
 .button-portfolio:focus,
@@ -735,7 +756,7 @@ button:focus {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--primary-white-color);
-  transition: 800ms;
+  transition: transform 250ms var(--timing-function);
   transform: scale(0.5);
 }
 .overlay {
