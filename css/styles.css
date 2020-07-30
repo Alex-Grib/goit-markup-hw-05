@@ -154,6 +154,8 @@ address {
   padding-bottom: 32px;
   text-decoration: none;
   color: var(--primary-text-color);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-list:not(:last-child) {
   margin-right: 30px;
@@ -360,6 +362,8 @@ address {
   color: #afb1b8;
   background-repeat: no-repeat;
   background-position: center;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-link:hover {
   background-color: var(--accent-color);
@@ -371,6 +375,7 @@ address {
 .team-link-icon {
   fill: currentColor;
 }
+
 .team-link:hover .team-link-icon {
   fill: white;
 }
@@ -497,6 +502,69 @@ address {
   margin-left: 45px;
 }
 
+.btn-footer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  margin: 0;
+  padding: 10px 29px;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 0.1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 0.1);
+  overflow: hidden;
+}
+.btn-footer:hover {
+  background-color: var(--primary-white-color);
+  color: var(--accent-color);
+}
+.btn-footer:focus {
+  background-color: var(--primary-white-color);
+  color: var(--accent-color);
+}
+
+.btn-footer::before,
+.btn-footer::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  background-size: contain;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 0.1);
+}
+
+.btn-footer::after {
+  background-image: url(../images/telegram-svg/telegram-svg.svg);
+  background-size: contain;
+}
+
+.btn-footer:hover::after {
+  transform: translateY(-40px);
+}
+
+.btn-footer::before {
+  position: absolute;
+  right: 0;
+  margin-right: 28px;
+  background-image: url(../images/what-are-we-doing/telegram-svg.svg);
+  transform: translateY(40px);
+}
+
+.btn-footer:hover::before {
+  transform: translateY(0px);
+}
+.btn-footer:focus::before {
+  transform: translateY(0px);
+}
+
 /*  Оформление социальных сетей */
 
 .logo-social {
@@ -540,6 +608,9 @@ address {
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 button:focus {
@@ -664,7 +735,8 @@ button:focus {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--primary-white-color);
-  transition: 600ms;
+  transition: 800ms;
+  transform: scale(0.5);
 }
 .overlay {
   position: absolute;
